@@ -1,0 +1,370 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-company-master-heading">Create or edit a Company Master</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!companyMaster.id">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="companyMaster.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_companyMasterSid">Company Master Sid</label>
+                    <input type="number" class="form-control" name="companyMasterSid" id="field_companyMasterSid"
+                        [(ngModel)]="companyMaster.companyMasterSid" required/>
+                    <div [hidden]="!(editForm.controls.companyMasterSid?.dirty && editForm.controls.companyMasterSid?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.companyMasterSid?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.companyMasterSid?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_companyId">Company Id</label>
+                    <input type="text" class="form-control" name="companyId" id="field_companyId"
+                        [(ngModel)]="companyMaster.companyId" required maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.companyId?.dirty && editForm.controls.companyId?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.companyId?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.companyId?.errors?.maxlength">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_companyNo">Company No</label>
+                    <input type="text" class="form-control" name="companyNo" id="field_companyNo"
+                        [(ngModel)]="companyMaster.companyNo" required maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.companyNo?.dirty && editForm.controls.companyNo?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.companyNo?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.companyNo?.errors?.maxlength">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_companyName">Company Name</label>
+                    <input type="text" class="form-control" name="companyName" id="field_companyName"
+                        [(ngModel)]="companyMaster.companyName" required maxlength="100"/>
+                    <div [hidden]="!(editForm.controls.companyName?.dirty && editForm.controls.companyName?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.companyName?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.companyName?.errors?.maxlength">
+                        This field cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_companyStartDate">Company Start Date</label>
+                    <div class="d-flex">
+                        <input id="field_companyStartDate" type="datetime-local" class="form-control" name="companyStartDate" [(ngModel)]="companyStartDate"
+                        required/>
+                    </div>
+                    <div [hidden]="!(editForm.controls.companyStartDate?.dirty && editForm.controls.companyStartDate?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.companyStartDate?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.companyStartDate?.errors?.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_companyEndDate">Company End Date</label>
+                    <div class="d-flex">
+                        <input id="field_companyEndDate" type="datetime-local" class="form-control" name="companyEndDate" [(ngModel)]="companyEndDate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lives">Lives</label>
+                    <input type="number" class="form-control" name="lives" id="field_lives"
+                        [(ngModel)]="companyMaster.lives" />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_financialSystem">Financial System</label>
+                    <input type="text" class="form-control" name="financialSystem" id="field_financialSystem"
+                        [(ngModel)]="companyMaster.financialSystem" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.financialSystem?.dirty && editForm.controls.financialSystem?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.financialSystem?.errors?.maxlength">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_address1">Address 1</label>
+                    <input type="text" class="form-control" name="address1" id="field_address1"
+                        [(ngModel)]="companyMaster.address1" maxlength="100"/>
+                    <div [hidden]="!(editForm.controls.address1?.dirty && editForm.controls.address1?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.address1?.errors?.maxlength">
+                        This field cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_address2">Address 2</label>
+                    <input type="text" class="form-control" name="address2" id="field_address2"
+                        [(ngModel)]="companyMaster.address2" maxlength="100"/>
+                    <div [hidden]="!(editForm.controls.address2?.dirty && editForm.controls.address2?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.address2?.errors?.maxlength">
+                        This field cannot be longer than 100 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_city">City</label>
+                    <input type="text" class="form-control" name="city" id="field_city"
+                        [(ngModel)]="companyMaster.city" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.city?.dirty && editForm.controls.city?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.city?.errors?.maxlength">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_zipCode">Zip Code</label>
+                    <input type="text" class="form-control" name="zipCode" id="field_zipCode"
+                        [(ngModel)]="companyMaster.zipCode" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.zipCode?.dirty && editForm.controls.zipCode?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.zipCode?.errors?.maxlength">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_regionCode">Region Code</label>
+                    <input type="text" class="form-control" name="regionCode" id="field_regionCode"
+                        [(ngModel)]="companyMaster.regionCode" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.regionCode?.dirty && editForm.controls.regionCode?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.regionCode?.errors?.maxlength">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_lastUpdatedDate">Last Updated Date</label>
+                    <div class="d-flex">
+                        <input id="field_lastUpdatedDate" type="datetime-local" class="form-control" name="lastUpdatedDate" [(ngModel)]="lastUpdatedDate"
+                        />
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_internalNotes">Internal Notes</label>
+                    <input type="text" class="form-control" name="internalNotes" id="field_internalNotes"
+                        [(ngModel)]="companyMaster.internalNotes" maxlength="4000"/>
+                    <div [hidden]="!(editForm.controls.internalNotes?.dirty && editForm.controls.internalNotes?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.internalNotes?.errors?.maxlength">
+                        This field cannot be longer than 4000 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_inboundStatus">Inbound Status</label>
+                    <input type="text" class="form-control" name="inboundStatus" id="field_inboundStatus"
+                        [(ngModel)]="companyMaster.inboundStatus" required maxlength="1"/>
+                    <div [hidden]="!(editForm.controls.inboundStatus?.dirty && editForm.controls.inboundStatus?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.inboundStatus?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.inboundStatus?.errors?.maxlength">
+                        This field cannot be longer than 1 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_recordLockStatus">Record Lock Status</label>
+                    <input type="checkbox" class="form-control" name="recordLockStatus" id="field_recordLockStatus"
+                        [(ngModel)]="companyMaster.recordLockStatus" />
+                    <div [hidden]="!(editForm.controls.recordLockStatus?.dirty && editForm.controls.recordLockStatus?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.recordLockStatus?.errors?.required">
+                        This field is required.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_batchId">Batch Id</label>
+                    <input type="text" class="form-control" name="batchId" id="field_batchId"
+                        [(ngModel)]="companyMaster.batchId" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.batchId?.dirty && editForm.controls.batchId?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.batchId?.errors?.maxlength">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_source">Source</label>
+                    <input type="text" class="form-control" name="source" id="field_source"
+                        [(ngModel)]="companyMaster.source" maxlength="50"/>
+                    <div [hidden]="!(editForm.controls.source?.dirty && editForm.controls.source?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.source?.errors?.maxlength">
+                        This field cannot be longer than 50 characters.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_createdBy">Created By</label>
+                    <input type="number" class="form-control" name="createdBy" id="field_createdBy"
+                        [(ngModel)]="companyMaster.createdBy" required/>
+                    <div [hidden]="!(editForm.controls.createdBy?.dirty && editForm.controls.createdBy?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.createdBy?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.createdBy?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_createdDate">Created Date</label>
+                    <div class="d-flex">
+                        <input id="field_createdDate" type="datetime-local" class="form-control" name="createdDate" [(ngModel)]="createdDate"
+                        required/>
+                    </div>
+                    <div [hidden]="!(editForm.controls.createdDate?.dirty && editForm.controls.createdDate?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.createdDate?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.createdDate?.errors?.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_modifiedBy">Modified By</label>
+                    <input type="number" class="form-control" name="modifiedBy" id="field_modifiedBy"
+                        [(ngModel)]="companyMaster.modifiedBy" required/>
+                    <div [hidden]="!(editForm.controls.modifiedBy?.dirty && editForm.controls.modifiedBy?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.modifiedBy?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.modifiedBy?.errors?.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_modifiedDate">Modified Date</label>
+                    <div class="d-flex">
+                        <input id="field_modifiedDate" type="datetime-local" class="form-control" name="modifiedDate" [(ngModel)]="modifiedDate"
+                        required/>
+                    </div>
+                    <div [hidden]="!(editForm.controls.modifiedDate?.dirty && editForm.controls.modifiedDate?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.modifiedDate?.errors?.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.modifiedDate?.errors?.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="field_companyType">Company Type</label>
+                    <select class="form-control" id="field_companyType" name="companyType" [(ngModel)]="companyMaster.companyTypeId"  required>
+                        <option *ngIf="!editForm.value.companyType" [ngValue]="null" selected></option>
+                        <option [ngValue]="helperTableOption.id" *ngFor="let helperTableOption of helpertables; trackBy: trackHelperTableById">{{helperTableOption.id}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.companyType?.dirty && editForm.controls.companyType?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.companyType?.errors?.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_companyStatus">Company Status</label>
+                    <select class="form-control" id="field_companyStatus" name="companyStatus" [(ngModel)]="companyMaster.companyStatusId"  required>
+                        <option *ngIf="!editForm.value.companyStatus" [ngValue]="null" selected></option>
+                        <option [ngValue]="helperTableOption.id" *ngFor="let helperTableOption of helpertables; trackBy: trackHelperTableById">{{helperTableOption.id}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.companyStatus?.dirty && editForm.controls.companyStatus?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.companyStatus?.errors?.required">
+                        This field is required.
+                    </small>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_companyCategory">Company Category</label>
+                    <select class="form-control" id="field_companyCategory" name="companyCategory" [(ngModel)]="companyMaster.companyCategoryId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="helperTableOption.id" *ngFor="let helperTableOption of helpertables; trackBy: trackHelperTableById">{{helperTableOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_companyGroup">Company Group</label>
+                    <select class="form-control" id="field_companyGroup" name="companyGroup" [(ngModel)]="companyMaster.companyGroupId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="helperTableOption.id" *ngFor="let helperTableOption of helpertables; trackBy: trackHelperTableById">{{helperTableOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_organizationKey">Organization Key</label>
+                    <select class="form-control" id="field_organizationKey" name="organizationKey" [(ngModel)]="companyMaster.organizationKeyId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="helperTableOption.id" *ngFor="let helperTableOption of helpertables; trackBy: trackHelperTableById">{{helperTableOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_state">State</label>
+                    <select class="form-control" id="field_state" name="state" [(ngModel)]="companyMaster.stateId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="helperTableOption.id" *ngFor="let helperTableOption of helpertables; trackBy: trackHelperTableById">{{helperTableOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_country">Country</label>
+                    <select class="form-control" id="field_country" name="country" [(ngModel)]="companyMaster.countryId" >
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="helperTableOption.id" *ngFor="let helperTableOption of helpertables; trackBy: trackHelperTableById">{{helperTableOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

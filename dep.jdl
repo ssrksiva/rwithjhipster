@@ -1,0 +1,21 @@
+entity DEPARTMENT { 
+dataProtectionPolicy_retentionDays int   
+ geoRestrictions_country String   
+ geoRestrictions_policy String   
+ geoRestrictions_retentionDate  
+ alternateIds_value String   
+ disablity_indicator  
+ disablity_summary String   
+ disablity_id String   
+ packageId_value String   
+ documentId_schemeId String   
+ documentId_value String   
+ documentId_language String   
+ assessmentAccessURL_uri String   
+ requester_name String   
+ requester_id String   
+ provider_name String   
+ provider_id String   
+ customer_name String   
+ customer_id String     
+  } 

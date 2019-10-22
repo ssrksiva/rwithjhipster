@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="helperTable">
+            <h2><span>Helper Table</span> {{helperTable.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Helper Table Sid</span></dt>
+                <dd>
+                    <span>{{helperTable.helperTableSid}}</span>
+                </dd>
+                <dt><span>Description</span></dt>
+                <dd>
+                    <span>{{helperTable.description}}</span>
+                </dd>
+                <dt><span>List Name</span></dt>
+                <dd>
+                    <span>{{helperTable.listName}}</span>
+                </dd>
+                <dt><span>Ref Count</span></dt>
+                <dd>
+                    <span>{{helperTable.refCount}}</span>
+                </dd>
+                <dt><span>Created By</span></dt>
+                <dd>
+                    <span>{{helperTable.createdBy}}</span>
+                </dd>
+                <dt><span>Created Date</span></dt>
+                <dd>
+                    <span>{{helperTable.createdDate}}</span>
+                </dd>
+                <dt><span>Modified By</span></dt>
+                <dd>
+                    <span>{{helperTable.modifiedBy}}</span>
+                </dd>
+                <dt><span>Modified Date</span></dt>
+                <dd>
+                    <span>{{helperTable.modifiedDate}}</span>
+                </dd>
+                <dt><span>Alias Name</span></dt>
+                <dd>
+                    <span>{{helperTable.aliasName}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/helper-table', helperTable.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

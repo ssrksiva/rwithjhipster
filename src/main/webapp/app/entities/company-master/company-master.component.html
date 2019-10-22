@@ -1,0 +1,148 @@
+<div>
+    <h2 id="page-heading">
+        <span>Company Masters</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-company-master" [routerLink]="['/company-master/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Company Master
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="table-responsive" *ngIf="companyMasters">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span>ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="companyMasterSid"><span>Company Master Sid</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="companyId"><span>Company Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="companyNo"><span>Company No</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="companyName"><span>Company Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="companyStartDate"><span>Company Start Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="companyEndDate"><span>Company End Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="lives"><span>Lives</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="financialSystem"><span>Financial System</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="address1"><span>Address 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="address2"><span>Address 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="city"><span>City</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="zipCode"><span>Zip Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="regionCode"><span>Region Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="lastUpdatedDate"><span>Last Updated Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="internalNotes"><span>Internal Notes</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="inboundStatus"><span>Inbound Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="recordLockStatus"><span>Record Lock Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="batchId"><span>Batch Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="source"><span>Source</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdBy"><span>Created By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="createdDate"><span>Created Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedBy"><span>Modified By</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="modifiedDate"><span>Modified Date</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="companyTypeId"><span>Company Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="companyStatusId"><span>Company Status</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="companyCategoryId"><span>Company Category</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="companyGroupId"><span>Company Group</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="organizationKeyId"><span>Organization Key</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="stateId"><span>State</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th jhiSortBy="countryId"><span>Country</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let companyMaster of companyMasters ;trackBy: trackId">
+                <td><a [routerLink]="['/company-master', companyMaster.id, 'view' ]">{{companyMaster.id}}</a></td>
+                <td>{{companyMaster.companyMasterSid}}</td>
+                <td>{{companyMaster.companyId}}</td>
+                <td>{{companyMaster.companyNo}}</td>
+                <td>{{companyMaster.companyName}}</td>
+                <td>{{companyMaster.companyStartDate | date:'medium'}}</td>
+                <td>{{companyMaster.companyEndDate | date:'medium'}}</td>
+                <td>{{companyMaster.lives}}</td>
+                <td>{{companyMaster.financialSystem}}</td>
+                <td>{{companyMaster.address1}}</td>
+                <td>{{companyMaster.address2}}</td>
+                <td>{{companyMaster.city}}</td>
+                <td>{{companyMaster.zipCode}}</td>
+                <td>{{companyMaster.regionCode}}</td>
+                <td>{{companyMaster.lastUpdatedDate | date:'medium'}}</td>
+                <td>{{companyMaster.internalNotes}}</td>
+                <td>{{companyMaster.inboundStatus}}</td>
+                <td>{{companyMaster.recordLockStatus}}</td>
+                <td>{{companyMaster.batchId}}</td>
+                <td>{{companyMaster.source}}</td>
+                <td>{{companyMaster.createdBy}}</td>
+                <td>{{companyMaster.createdDate | date:'medium'}}</td>
+                <td>{{companyMaster.modifiedBy}}</td>
+                <td>{{companyMaster.modifiedDate | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="companyMaster.companyTypeId">
+                        <a [routerLink]="['../helper-table', companyMaster.companyTypeId , 'view' ]" >{{companyMaster.companyTypeId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="companyMaster.companyStatusId">
+                        <a [routerLink]="['../helper-table', companyMaster.companyStatusId , 'view' ]" >{{companyMaster.companyStatusId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="companyMaster.companyCategoryId">
+                        <a [routerLink]="['../helper-table', companyMaster.companyCategoryId , 'view' ]" >{{companyMaster.companyCategoryId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="companyMaster.companyGroupId">
+                        <a [routerLink]="['../helper-table', companyMaster.companyGroupId , 'view' ]" >{{companyMaster.companyGroupId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="companyMaster.organizationKeyId">
+                        <a [routerLink]="['../helper-table', companyMaster.organizationKeyId , 'view' ]" >{{companyMaster.organizationKeyId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="companyMaster.stateId">
+                        <a [routerLink]="['../helper-table', companyMaster.stateId , 'view' ]" >{{companyMaster.stateId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="companyMaster.countryId">
+                        <a [routerLink]="['../helper-table', companyMaster.countryId , 'view' ]" >{{companyMaster.countryId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['/company-master', companyMaster.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/company-master', companyMaster.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'company-master/'+ companyMaster.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div *ngIf="companyMasters && companyMasters.length">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="queryCount" [maxSize]="5" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

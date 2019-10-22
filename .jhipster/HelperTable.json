@@ -1,0 +1,121 @@
+{
+    "name": "HelperTable",
+    "fields": [
+        {
+            "fieldName": "helperTableSid",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 100
+        },
+        {
+            "fieldName": "listName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 50
+        },
+        {
+            "fieldName": "refCount",
+            "fieldType": "BigDecimal"
+        },
+        {
+            "fieldName": "createdBy",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "modifiedBy",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "modifiedDate",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "aliasName",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1000
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "companyMaster",
+            "otherEntityName": "companyMaster",
+            "otherEntityRelationshipName": "companyType"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "companyMaster",
+            "otherEntityName": "companyMaster",
+            "otherEntityRelationshipName": "companyStatus"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "companyMaster",
+            "otherEntityName": "companyMaster",
+            "otherEntityRelationshipName": "companyCategory"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "companyMaster",
+            "otherEntityName": "companyMaster",
+            "otherEntityRelationshipName": "companyGroup"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "companyMaster",
+            "otherEntityName": "companyMaster",
+            "otherEntityRelationshipName": "organizationKey"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "companyMaster",
+            "otherEntityName": "companyMaster",
+            "otherEntityRelationshipName": "state"
+        },
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "companyMaster",
+            "otherEntityName": "companyMaster",
+            "otherEntityRelationshipName": "country"
+        }
+    ],
+    "changelogDate": "20190814071239",
+    "entityTableName": "helper_table",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceClass",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,157 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="companyMaster">
+            <h2><span>Company Master</span> {{companyMaster.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span>Company Master Sid</span></dt>
+                <dd>
+                    <span>{{companyMaster.companyMasterSid}}</span>
+                </dd>
+                <dt><span>Company Id</span></dt>
+                <dd>
+                    <span>{{companyMaster.companyId}}</span>
+                </dd>
+                <dt><span>Company No</span></dt>
+                <dd>
+                    <span>{{companyMaster.companyNo}}</span>
+                </dd>
+                <dt><span>Company Name</span></dt>
+                <dd>
+                    <span>{{companyMaster.companyName}}</span>
+                </dd>
+                <dt><span>Company Start Date</span></dt>
+                <dd>
+                    <span>{{companyMaster.companyStartDate}}</span>
+                </dd>
+                <dt><span>Company End Date</span></dt>
+                <dd>
+                    <span>{{companyMaster.companyEndDate}}</span>
+                </dd>
+                <dt><span>Lives</span></dt>
+                <dd>
+                    <span>{{companyMaster.lives}}</span>
+                </dd>
+                <dt><span>Financial System</span></dt>
+                <dd>
+                    <span>{{companyMaster.financialSystem}}</span>
+                </dd>
+                <dt><span>Address 1</span></dt>
+                <dd>
+                    <span>{{companyMaster.address1}}</span>
+                </dd>
+                <dt><span>Address 2</span></dt>
+                <dd>
+                    <span>{{companyMaster.address2}}</span>
+                </dd>
+                <dt><span>City</span></dt>
+                <dd>
+                    <span>{{companyMaster.city}}</span>
+                </dd>
+                <dt><span>Zip Code</span></dt>
+                <dd>
+                    <span>{{companyMaster.zipCode}}</span>
+                </dd>
+                <dt><span>Region Code</span></dt>
+                <dd>
+                    <span>{{companyMaster.regionCode}}</span>
+                </dd>
+                <dt><span>Last Updated Date</span></dt>
+                <dd>
+                    <span>{{companyMaster.lastUpdatedDate}}</span>
+                </dd>
+                <dt><span>Internal Notes</span></dt>
+                <dd>
+                    <span>{{companyMaster.internalNotes}}</span>
+                </dd>
+                <dt><span>Inbound Status</span></dt>
+                <dd>
+                    <span>{{companyMaster.inboundStatus}}</span>
+                </dd>
+                <dt><span>Record Lock Status</span></dt>
+                <dd>
+                    <span>{{companyMaster.recordLockStatus}}</span>
+                </dd>
+                <dt><span>Batch Id</span></dt>
+                <dd>
+                    <span>{{companyMaster.batchId}}</span>
+                </dd>
+                <dt><span>Source</span></dt>
+                <dd>
+                    <span>{{companyMaster.source}}</span>
+                </dd>
+                <dt><span>Created By</span></dt>
+                <dd>
+                    <span>{{companyMaster.createdBy}}</span>
+                </dd>
+                <dt><span>Created Date</span></dt>
+                <dd>
+                    <span>{{companyMaster.createdDate}}</span>
+                </dd>
+                <dt><span>Modified By</span></dt>
+                <dd>
+                    <span>{{companyMaster.modifiedBy}}</span>
+                </dd>
+                <dt><span>Modified Date</span></dt>
+                <dd>
+                    <span>{{companyMaster.modifiedDate}}</span>
+                </dd>
+                <dt><span>Company Type</span></dt>
+                <dd>
+                    <div *ngIf="companyMaster.companyTypeId">
+                        <a [routerLink]="['/helper-table', companyMaster.companyTypeId, 'view']">{{companyMaster.companyTypeId}}</a>
+                    </div>
+                </dd>
+                <dt><span>Company Status</span></dt>
+                <dd>
+                    <div *ngIf="companyMaster.companyStatusId">
+                        <a [routerLink]="['/helper-table', companyMaster.companyStatusId, 'view']">{{companyMaster.companyStatusId}}</a>
+                    </div>
+                </dd>
+                <dt><span>Company Category</span></dt>
+                <dd>
+                    <div *ngIf="companyMaster.companyCategoryId">
+                        <a [routerLink]="['/helper-table', companyMaster.companyCategoryId, 'view']">{{companyMaster.companyCategoryId}}</a>
+                    </div>
+                </dd>
+                <dt><span>Company Group</span></dt>
+                <dd>
+                    <div *ngIf="companyMaster.companyGroupId">
+                        <a [routerLink]="['/helper-table', companyMaster.companyGroupId, 'view']">{{companyMaster.companyGroupId}}</a>
+                    </div>
+                </dd>
+                <dt><span>Organization Key</span></dt>
+                <dd>
+                    <div *ngIf="companyMaster.organizationKeyId">
+                        <a [routerLink]="['/helper-table', companyMaster.organizationKeyId, 'view']">{{companyMaster.organizationKeyId}}</a>
+                    </div>
+                </dd>
+                <dt><span>State</span></dt>
+                <dd>
+                    <div *ngIf="companyMaster.stateId">
+                        <a [routerLink]="['/helper-table', companyMaster.stateId, 'view']">{{companyMaster.stateId}}</a>
+                    </div>
+                </dd>
+                <dt><span>Country</span></dt>
+                <dd>
+                    <div *ngIf="companyMaster.countryId">
+                        <a [routerLink]="['/helper-table', companyMaster.countryId, 'view']">{{companyMaster.countryId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/company-master', companyMaster.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

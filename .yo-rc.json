@@ -1,0 +1,36 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "com.stpl.javar"
+    },
+    "jhipsterVersion": "5.5.0",
+    "applicationType": "gateway",
+    "baseName": "RwithJhipster",
+    "packageName": "com.stpl.javar",
+    "packageFolder": "com/stpl/javar",
+    "serverPort": "8080",
+    "authenticationType": "jwt",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "maven",
+    "enableSwaggerCodegen": true,
+    "jwtSecretKey": "NzU3OTZjZjc3NjY1YTZjZDExZThjNmY0YzI4MmVlZjdkYmZjN2JiZDE4ZjgzOWVmNjk2Y2M5MDRhOWIwZWFjODRiNzBjNGVhZjc4NDY3Yzc4MWU0Mjc4MTM5ZDAzMmE2MzcyY2M0MTEwZjM3YThhM2IwMzE4MzY2YTU4Zjc1Y2E=",
+    "clientFramework": "angularX",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "gatling",
+      "cucumber",
+      "protractor"
+    ],
+    "jhiPrefix": "jhi",
+    "enableTranslation": false
+  }
+}
