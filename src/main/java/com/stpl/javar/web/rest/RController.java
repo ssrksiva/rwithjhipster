@@ -75,13 +75,12 @@ public  void rChartCreate1(RConnection c) throws REXPMismatchException, IOExcept
         
          c.eval("library(plotly)");
          c.eval("library(mongolite)");
-         c.eval("my_collection = mongo(collection = 'population', db ='test_population')");
+         c.eval("df<-mongo(collection = 'test', db ='RwithJhipster')");
          
-         c.eval("dat1 <- data.frame(dep = factor(c('Sales','Sales','Marketing','Marketing')),time = factor(c('Jan','Feb','Jan','Feb'), levels=c('Jan','Feb')), total_bill = c(13.53, 16.81, 16.24, 14))");
-
-         c.eval("p <- ggplot(data=dat1, aes(x=time, y=total, fill=dep)) +geom_bar(stat='identity', position=position_dodge())+ggtitle('Dynamic Chart Generate')");
-
-         c.eval("p <- ggplotly(p)");
+         c.eval("data<-df$find(query = '{}', fields = '{}')");
+		 c.eval("data <- data[sample(1:nrow(data), 10,replace=FALSE),]");
+		 c.eval("p <- ggplot(data, aes(x = `Country`,y=`Units Sold`))+geom_bar(stat=\"identity\",color='skyblue',fill='#b35900')+coord_flip()+xlab(\"Country\")+ggtitle('Show Units Sold in Countries')");
+		 c.eval("p <- ggplotly(p)");
          System.out.println("Working Directory = " +
          System.getProperty("user.dir"));
          output=c.eval("paste(htmltools::tagList(list(config(p, displaylogo = FALSE,responsive= TRUE))))").asString();
